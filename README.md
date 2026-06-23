@@ -33,14 +33,46 @@ A high-stakes lawyer-themed game featuring a unique **Spin** rebuttal mechanic �
 
 ## Getting started
 
-1. **Clone the repo**
+This repo uses a **fork-based workflow** — nobody pushes directly to this repo except for approved PR merges. Every contributor works from their own fork.
+
+1. **Fork the repo**
+   Click `Fork` at the top of [prradyun56/Devil-s-Advocate](https://github.com/prradyun56/Devil-s-Advocate) on GitHub. This creates a copy under your own account.
+
+2. **Clone your fork** (not this repo)
    ```bash
-   git clone https://github.com/prradyun56/Devil-s-Advocate.git
+   git clone https://github.com/YOUR-USERNAME/Devil-s-Advocate.git
+   cd Devil-s-Advocate
    ```
-2. **Open in Godot**
+
+3. **Add this repo as `upstream`**
+   ```bash
+   git remote add upstream https://github.com/prradyun56/Devil-s-Advocate.git
+   git remote -v
+   ```
+   You should see:
+   ```
+   origin     https://github.com/YOUR-USERNAME/Devil-s-Advocate_NAME.git   (fetch/push)
+   upstream   https://github.com/prradyun56/Devil-s-Advocate.git      (fetch/push)
+   ```
+
+4. **Open in Godot**
    Launch Godot → `Import` → select `project.godot` in the root folder.
-3. **Environment**
+
+5. **Environment**
    Make sure the **Dialogic** addon is installed. It should auto-sync as long as the `addons/` folder is committed.
+
+### Staying in sync
+
+Before starting any new feature, pull the latest changes from upstream into your fork's `main`:
+
+```bash
+git checkout main
+git fetch upstream
+git merge upstream/main
+git push origin main
+```
+
+> Skipping this step before branching is the #1 cause of avoidable merge conflicts. Sync first, branch second.
 
 ## Workflow guidelines
 
@@ -63,7 +95,13 @@ fix: resolve dialogue box alignment
 
 ### Pull requests
 
-When a feature is done, open a PR on GitHub and **tag at least one teammate** for code review before merging.
+When a feature is done, push your branch to **your fork** (`origin`), not upstream:
+
+```bash
+git push origin feature/spin-mechanic
+```
+
+Then open a PR on GitHub from your fork's branch into this repo's `main`, and **tag at least one teammate** for code review before merging.
 
 ### Assets
 
