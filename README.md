@@ -40,8 +40,8 @@ This repo uses a **fork-based workflow** — nobody pushes directly to this repo
 
 2. **Clone your fork** (not this repo)
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Devil-s-Advocate.git
-   cd Devil-s-Advocate
+   git clone https://github.com/YOUR-USERNAME/Devil-s-Advocate_NAME.git
+   cd Devil-s-Advocate_NAME
    ```
 
 3. **Add this repo as `upstream`**
